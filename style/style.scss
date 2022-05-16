@@ -1,0 +1,135 @@
+:root{
+    --orange: hsl(25, 97%, 53%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --medium-grey-2: hsl(214, 12%, 24%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+}
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:Before, *:after{
+    box-sizing: inherit;
+}
+body{
+    font-family: 'Overpass', sans-serif;
+    background: var(--very-dark-blue);
+}
+.card-flex{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+}
+.card{
+    background: var(--dark-blue);
+    border-radius: 15px;
+    padding: 25px;
+    max-width: 329px;
+    &-main{
+        &-img{
+            background: var(--medium-grey-2);
+            width: 40px;
+            padding: 14px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+        }
+        &-title,
+        &-section-title{
+            color: #fff;
+        }
+        &-text,
+        &-section-text{
+            color: var(--medium-grey);
+            font-size: 15px;
+            line-height: 20px;
+        }
+        &-component{
+            display: flex;
+            list-style: none;
+            padding: 0;
+            justify-content: space-between;
+            &-item{
+                width: 40px;
+                padding: 14px;
+                height: 40px;
+                text-align: center;
+                background: var(--medium-grey-2);
+                border-radius: 50%;
+                font-weight: 700;
+                color: var(--medium-grey);
+                cursor: pointer;
+                margin: 10px 0;
+            }
+            &-item:hover{
+                background: var(--light-grey);
+                color: #fff;
+            }
+            .active{
+                background: var(--orange);
+            }
+        }
+        .alert li{
+            background: var(--light-grey);
+            color: #fff;
+        }
+        &-btn{
+            width: 100%;
+            background: var(--orange);
+            border-radius: 15px;
+            padding: 10px;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: none;
+            outline: none;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color .3s ease;
+        }
+        &-btn:hover{
+            background: #fff;
+            color: var(--orange);
+        }
+        @keyframes alert {
+            0%{ -ms-transform: translateX(0); transform: translateX(0); }
+            5%{ -ms-transform: translateX(-10px); transform: translateX(-10px); }
+            10%{ -ms-transform: translateX(10px); transform: translateX(10px); }
+            15%{ -ms-transform: translateX(-10px); transform: translateX(-10px); }
+            20%{ -ms-transform: translateX(10px); transform: translateX(10px); }
+            25%{ -ms-transform: translateX(-10px); transform: translateX(-10px); }
+            30%{ -ms-transform: translateX(10px); transform: translateX(10px); }
+            35%{ -ms-transform: translateX(-10px); transform: translateX(-10px); }
+            40%{ -ms-transform: translateX(10px); transform: translateX(10px); }
+            45%{ -ms-transform: translateX(-10px); transform: translateX(-10px); }
+            50%{ -ms-transform: translateX(0); transform: translateX(0); }
+            }
+        &-errorMessage{
+            text-align: center;
+            font-size: 10px;
+            color: #ff0000;
+            margin: 15px 0 0;
+            animation:alert 3s ease 0s 1 normal;
+            display: none;
+        }
+        &-section{
+            text-align: center;
+            display: none;
+            &-rating{
+                padding: 5px 15px;
+                margin: 15px;
+                font-size: 15px;
+                background: var(--medium-grey-2);
+                display: inline-block;
+                border-radius: 15px;
+                color: var(--orange);
+            }
+        }
+    }
+}
